@@ -15,7 +15,14 @@ const HeartBeat = () => {
     )
 }
 
-const withGauge = ({ WrappedComponent = HeartBeat, colorArray = [], fields = [{title: "Gauge 1", value: "100"}]}) => () => {
+const withGauge = ({ WrappedComponent = HeartBeat, 
+    colorArray = [], 
+    fields = [
+        {title: "Title 1", value: "100", titleColor: "black", valueColor: "black"},
+        {title: "Title 2", value: "100", titleColor: "black", valueColor: "black"},
+        {title: "Title 3", value: "100", titleColor: "black", valueColor: "black"},
+        {title: "Title 4", value: "100", titleColor: "black", valueColor: "black"}]
+    }) => () => {
     const fieldsNumber = fields.length;
     if (fieldsNumber > 4) {
         fields = fields.slice(0 , 4);
@@ -77,10 +84,10 @@ const withGauge = ({ WrappedComponent = HeartBeat, colorArray = [], fields = [{t
             strokeWidth = "5"/>
             {fieldsNumber === 1 && (
                 <Fragment>
-                    <text className="gauge-text" x="80" y="35" dx="-20" dy="1em" fill="black" fontSize='0.8rem' textAnchor='middle' fontFamily='arial'>
+                    <text className="gauge-text" x="80" y="35" dx="-20" dy="1em" fill={fields[0].titleColor} fontSize='0.8rem' textAnchor='middle' fontFamily='arial'>
                         {fields[0].title}
                     </text>
-                    <text className="gauge-text" x="80" y="55" dx="-20" dy="1em" fill="black" fontSize='1.1rem' textAnchor='middle' fontFamily='arial'>
+                    <text className="gauge-text" x="80" y="55" dx="-20" dy="1em" fill={fields[0].valueColor} fontSize='1.1rem' textAnchor='middle' fontFamily='arial'>
                         {fields[0].value}
                     </text>
                     <svg width="15" height="15" viewBox="0 0 100 100" x="52" y="90">
@@ -98,16 +105,16 @@ const withGauge = ({ WrappedComponent = HeartBeat, colorArray = [], fields = [{t
                         y1="60"
                         x2="110"
                         y2="60" />
-                        <text className="gauge-text" x="80" y="20" dx="-20" dy="1em" fill="black" fontSize='0.5rem' textAnchor='middle' fontFamily='arial'>
+                        <text className="gauge-text" x="80" y="20" dx="-20" dy="1em" fill={fields[0].titleColor} fontSize='0.5rem' textAnchor='middle' fontFamily='arial'>
                             {fields[0].title}
                         </text>
-                        <text className="gauge-text" x="80" y="38" dx="-20" dy="1em" fill="black" fontSize='0.8rem' textAnchor='middle' fontFamily='arial'>
+                        <text className="gauge-text" x="80" y="38" dx="-20" dy="1em" fill={fields[0].valueColor} fontSize='0.8rem' textAnchor='middle' fontFamily='arial'>
                             {fields[0].value}
                         </text>
-                        <text className="gauge-text" x="80" y="70" dx="-20" dy="1em" fill="black" fontSize='0.5rem' textAnchor='middle' fontFamily='arial'>
+                        <text className="gauge-text" x="80" y="70" dx="-20" dy="1em" fill={fields[1].titleColor} fontSize='0.5rem' textAnchor='middle' fontFamily='arial'>
                             {fields[1].title}
                         </text>
-                        <text className="gauge-text" x="80" y="88" dx="-20" dy="1em" fill="black" fontSize='0.8rem' textAnchor='middle' fontFamily='arial'>
+                        <text className="gauge-text" x="80" y="88" dx="-20" dy="1em" fill={fields[1].valueColor} fontSize='0.8rem' textAnchor='middle' fontFamily='arial'>
                             {fields[1].value}
                         </text>
                 </Fragment>
@@ -130,22 +137,22 @@ const withGauge = ({ WrappedComponent = HeartBeat, colorArray = [], fields = [{t
                         y1="60"
                         x2="60"
                         y2="110" />
-                    <text className="gauge-text" x="80" y="15" dx="-20" dy="1em" fill="black" fontSize='0.5rem' textAnchor='middle' fontFamily='arial'>
+                    <text className="gauge-text" x="80" y="15" dx="-20" dy="1em" fill={fields[0].titleColor} fontSize='0.5rem' textAnchor='middle' fontFamily='arial'>
                         {fields[0].title}
                     </text>
-                    <text className="gauge-text" x="80" y="30" dx="-20" dy="1em" fill="black" fontSize='0.7rem' textAnchor='middle' fontFamily='arial'>
+                    <text className="gauge-text" x="80" y="30" dx="-20" dy="1em" fill={fields[0].valueColor} fontSize='0.7rem' textAnchor='middle' fontFamily='arial'>
                         {fields[0].value}
                     </text>
-                    <text className="gauge-text" x="57" y="65" dx="-20" dy="1em" fill="black" fontSize='0.5rem' textAnchor='middle' fontFamily='arial'>
+                    <text className="gauge-text" x="57" y="65" dx="-20" dy="1em" fill={fields[1].titleColor} fontSize='0.5rem' textAnchor='middle' fontFamily='arial'>
                         {fields[1].title}
                     </text>
-                    <text className="gauge-text" x="57" y="82" dx="-20" dy="1em" fill="black" fontSize='0.7rem' textAnchor='middle' fontFamily='arial'>
+                    <text className="gauge-text" x="57" y="82" dx="-20" dy="1em" fill={fields[1].valueColor} fontSize='0.7rem' textAnchor='middle' fontFamily='arial'>
                         {fields[1].value}
                     </text>
-                    <text className="gauge-text" x="105" y="65" dx="-20" dy="1em" fill="black" fontSize='0.5rem' textAnchor='middle' fontFamily='arial'>
+                    <text className="gauge-text" x="105" y="65" dx="-20" dy="1em" fill={fields[2].titleColor} fontSize='0.5rem' textAnchor='middle' fontFamily='arial'>
                         {fields[2].title}
                     </text>
-                    <text className="gauge-text" x="105" y="82" dx="-20" dy="1em" fill="black" fontSize='0.7rem' textAnchor='middle' fontFamily='arial'>
+                    <text className="gauge-text" x="105" y="82" dx="-20" dy="1em" fill={fields[2].valueColor} fontSize='0.7rem' textAnchor='middle' fontFamily='arial'>
                         {fields[2].value}
                     </text>
                 </Fragment>
@@ -176,28 +183,28 @@ const withGauge = ({ WrappedComponent = HeartBeat, colorArray = [], fields = [{t
                         y1="77"
                         x2="105"
                         y2="77" />
-                    <text className="gauge-text" x="80" y="10" dx="-20" dy="1em" fill="black" fontSize='0.5rem' textAnchor='middle' fontFamily='arial'>
+                    <text className="gauge-text" x="80" y="10" dx="-20" dy="1em" fill={fields[0].titleColor} fontSize='0.5rem' textAnchor='middle' fontFamily='arial'>
                         {fields[0].title}
                     </text>
-                    <text className="gauge-text" x="80" y="20" dx="-20" dy="1em" fill="black" fontSize='0.7rem' textAnchor='middle' fontFamily='arial'>
+                    <text className="gauge-text" x="80" y="20" dx="-20" dy="1em" fill={fields[0].valueColor} fontSize='0.7rem' textAnchor='middle' fontFamily='arial'>
                         {fields[0].value}
                     </text>
-                    <text className="gauge-text" x="55" y="48" dx="-20" dy="1em" fill="black" fontSize='0.5rem' textAnchor='middle' fontFamily='arial'>
+                    <text className="gauge-text" x="55" y="48" dx="-20" dy="1em" fill={fields[1].titleColor} fontSize='0.5rem' textAnchor='middle' fontFamily='arial'>
                         {fields[1].title}
                     </text>
-                    <text className="gauge-text" x="55" y="58" dx="-20" dy="1em" fill="black" fontSize='0.7rem' textAnchor='middle' fontFamily='arial'>
+                    <text className="gauge-text" x="55" y="58" dx="-20" dy="1em" fill={fields[1].valueColor} fontSize='0.7rem' textAnchor='middle' fontFamily='arial'>
                         {fields[1].value}
                     </text>
-                    <text className="gauge-text" x="105" y="48" dx="-20" dy="1em" fill="black" fontSize='0.5rem' textAnchor='middle' fontFamily='arial'>
+                    <text className="gauge-text" x="105" y="48" dx="-20" dy="1em" fill={fields[2].titleColor} fontSize='0.5rem' textAnchor='middle' fontFamily='arial'>
                         {fields[2].title}
                     </text>
-                    <text className="gauge-text" x="105" y="58" dx="-20" dy="1em" fill="black" fontSize='0.7rem' textAnchor='middle' fontFamily='arial'>
-                        {fields[1].value}
+                    <text className="gauge-text" x="105" y="58" dx="-20" dy="1em" fill={fields[2].valueColor} fontSize='0.7rem' textAnchor='middle' fontFamily='arial'>
+                        {fields[2].value}
                     </text>
-                    <text className="gauge-text" x="80" y="80" dx="-20" dy="1em" fill="black" fontSize='0.5rem' textAnchor='middle' fontFamily='arial'>
+                    <text className="gauge-text" x="80" y="80" dx="-20" dy="1em" fill={fields[3].titleColor} fontSize='0.5rem' textAnchor='middle' fontFamily='arial'>
                         {fields[3].title}
                     </text>
-                    <text className="gauge-text" x="80" y="90" dx="-20" dy="1em" fill="black" fontSize='0.7rem' textAnchor='middle' fontFamily='arial'>
+                    <text className="gauge-text" x="80" y="90" dx="-20" dy="1em" fill={fields[3].valueColor} fontSize='0.7rem' textAnchor='middle' fontFamily='arial'>
                         {fields[3].value}
                     </text>
                     <svg width="10" height="10" viewBox="0 0 100 100" x="38" y="93">
