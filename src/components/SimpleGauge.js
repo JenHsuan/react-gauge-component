@@ -15,6 +15,19 @@ const HeartBeat = () => {
     )
 }
 
+const Needle = ({value = 0, min = 0, max = 100}) => () => {
+    value = value >= max ? max : value;
+    const rotate = Math.floor((value - min) / (max - min) * -180);
+    return (
+        <g>
+            <path className="fmo-gauge__fill"  d="M4.55248,50.95248a47,45,0,1,1,45,45A65,45,0,0,1,4.55248,45.95248Z" fill="none"
+                      stroke="#1ccfc9" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="10" strokeDasharray="150,150"/>
+            <line fill="none" stroke="#D95857" strokeWidth="4" strokeLinecap="round" strokeMiterlimit="10" x1="50" y1="50" x2="8" y2="50" transform={`translate(50 0) rotate(${rotate} 0 50)`}/>
+            <circle fill="#FFFFFF" stroke="#2B2436" strokeWidth="3" strokeMiterlimit="10" cx="50" cy="50" r="5" />
+        </g>
+    )
+}
+
 const withGauge = ({ WrappedComponent = HeartBeat, 
     colorArray = [], 
     fields = [
@@ -90,7 +103,7 @@ const withGauge = ({ WrappedComponent = HeartBeat,
                     <text className="gauge-text" x="80" y="55" dx="-20" dy="1em" fill={fields[0].valueColor} fontSize='1.1rem' textAnchor='middle' fontFamily='arial'>
                         {fields[0].value}
                     </text>
-                    <svg width="15" height="15" viewBox="0 0 100 100" x="52" y="90">
+                    <svg width="20" height="20" viewBox="0 0 120 120" x="50" y="90">
                         <WrappedComponent/>
                     </svg>
                 </Fragment>
@@ -217,7 +230,8 @@ const withGauge = ({ WrappedComponent = HeartBeat,
 }
 
 export {
-    HeartBeat
+    HeartBeat,
+    Needle
 };
 
 export default withGauge;

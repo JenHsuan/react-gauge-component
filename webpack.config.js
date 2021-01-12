@@ -3,7 +3,6 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var webpack = require('webpack');
 
 module.exports = {
-  mode: 'development',
   entry: './src/components/SimpleGauge.js',
   output: {
     path: path.resolve(__dirname, 'build'),

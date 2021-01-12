@@ -13,43 +13,50 @@ npm i react-ui-gauge-component
 Then use it in your app
 
 ```javascript
-import React from 'react';
-import withGauge, {HeartBeat} from 'react-ui-gauge-component';
+import React, { Fragment } from 'react';
+import withGauge, { HeartBeat, Needle } from 'react-ui-gauge-component';
+
+const defaultTitleColor = "black";
+const defaultValueColor = "black";
 
 const Gauge1 = withGauge({
-    fields: [{title: "Label 1", value: "100"}]
+    WrappedComponent: Needle({value:data[0], min: 0, max: 100}),
+    fields: [{title: "Label 1", value: "100", titleColor: defaultTitleColor, valueColor: defaultValueColor}]
 });
 
 const Gauge2 = withGauge({
     WrappedComponent: HeartBeat,
     colorArray: ["#eb001e", "#000", "#3aff20", "#53a5fd", "#aaaaaa"],
-    fields: [{title: "Label 1", value: "100"},
-    {title: "Label 2", value: "100"}]
+    fields: [
+        {title: "Label 1", value: "100", titleColor: defaultTitleColor, valueColor: defaultValueColor},
+        {title: "Label 2", value: "100", titleColor: defaultTitleColor, valueColor: defaultValueColor}]
 });
 
 const Gauge3 = withGauge({
     WrappedComponent: HeartBeat,
     fields: [
-        {title: "Label 1", value: "100"},
-        {title: "Label 2", value: "100"},
-        {title: "Label 3", value: "100"}]
+        {title: "Label 1", value: "100", titleColor: defaultTitleColor, valueColor: defaultValueColor},
+        {title: "Label 2", value: "100", titleColor: defaultTitleColor, valueColor: defaultValueColor},
+        {title: "Label 3", value: "100", titleColor: defaultTitleColor, valueColor: defaultValueColor}]
 });
 
 const Gauge4 = withGauge({
     WrappedComponent: HeartBeat,
     fields: [
-        {title: "Label 1", value: "100"},
-        {title: "Label 2", value: "100"},
-        {title: "Label 3", value: "100"},
-        {title: "Label 4", value: "100"}]
+        {title: "Label 1", value: "100", titleColor: defaultTitleColor, valueColor: defaultValueColor},
+        {title: "Label 2", value: "100", titleColor: defaultTitleColor, valueColor: defaultValueColor},
+        {title: "Label 3", value: "100", titleColor: defaultTitleColor, valueColor: defaultValueColor},
+        {title: "Label 4", value: "100", titleColor: defaultTitleColor, valueColor: defaultValueColor}]
 });
 
 const DashboardExample = () => {
     return (
-        <Gauge1/>
-        <Gauge2/>
-        <Gauge3/>
-        <Gauge4/>
+        <Fragment>
+            <Gauge1/>
+            <Gauge2/>
+            <Gauge3/>
+            <Gauge4/>
+        <Fragment/>
     )
 }
 
@@ -58,6 +65,7 @@ export default DashboardExample;
 ```
 
 ## Props
+### withGauge
 * WrappedComponent -  Put a react component as a widget to compose a new gauge. The default widget is the heartbeat icon.
 * colorArray - Put an array of color for the gauge border.
 
@@ -69,11 +77,16 @@ colorArray: ["#eb001e", "#f35120", "#3aff20", "#53a5fd", "#aaaaaa"]
 
 ```javascript
 fields: [
-        {title: "Gauge 1", value: "100"},
-        {title: "Gauge 2", value: "100"},
-        {title: "Gauge 3", value: "100"},
-        {title: "Gauge 4", value: "100"}]
+        {title: "Gauge 1", value: "100", titleColor: "black", valueColor: "black"},
+        {title: "Gauge 2", value: "100", titleColor: "black", valueColor: "black"},
+        {title: "Gauge 3", value: "100", titleColor: "black", valueColor: "black"},
+        {title: "Gauge 4", value: "100", titleColor: "black", valueColor: "black"}]
 ```
+
+### Needle
+* value: defult value is zero
+* min: defult value is zero
+* max: defult value is 100
 
 ## License
 MIT Licensed. Copyright (c) Jen-Hsuan Hsieh 2021.
