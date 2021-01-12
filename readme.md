@@ -1,7 +1,7 @@
 # Gauge Component for React
 A library that provides basic gauge styles and widgets to create gauges efficiently for React projects.
 
-![screen shot](https://raw.githubusercontent.com/JenHsuan/react-gauge-component/master/demo/screen-shot.jpg)
+![screen shot](https://raw.githubusercontent.com/JenHsuan/react-gauge-component/master/demo/screen-shot.png)
 
 ## Installation and usage
 The easiest way to use react-ui-gauge-component is to install it from npm.
@@ -17,35 +17,31 @@ import React from 'react';
 import withGauge, {HeartBeat} from 'react-ui-gauge-component';
 
 const Gauge1 = withGauge({
-    WrappedComponent: HeartBeat,
-    colorArray: ["#eb001e", "#f35120", "#3aff20", "#53a5fd", "#aaaaaa"],
-    fields: [{title: "Gauge 1", value: "100"}]
+    fields: [{title: "Label 1", value: "100"}]
 });
 
 const Gauge2 = withGauge({
     WrappedComponent: HeartBeat,
     colorArray: ["#eb001e", "#000", "#3aff20", "#53a5fd", "#aaaaaa"],
-    fields: [{title: "Gauge 1", value: "100"},
-    {title: "Gauge 2", value: "100"}]
+    fields: [{title: "Label 1", value: "100"},
+    {title: "Label 2", value: "100"}]
 });
 
 const Gauge3 = withGauge({
     WrappedComponent: HeartBeat,
-    colorArray: ["#eb001e", "#f35120", "#3aff20", "#53a5fd", "#aaaaaa"],
     fields: [
-        {title: "Gauge 1", value: "100"},
-        {title: "Gauge 2", value: "100"},
-        {title: "Gauge 3", value: "100"}]
+        {title: "Label 1", value: "100"},
+        {title: "Label 2", value: "100"},
+        {title: "Label 3", value: "100"}]
 });
 
 const Gauge4 = withGauge({
     WrappedComponent: HeartBeat,
-    colorArray: ["#eb001e", "#f35120", "#3aff20", "#53a5fd", "#aaaaaa"],
     fields: [
-        {title: "Gauge 1", value: "100"},
-        {title: "Gauge 2", value: "100"},
-        {title: "Gauge 3", value: "100"},
-        {title: "Gauge 4", value: "100"}]
+        {title: "Label 1", value: "100"},
+        {title: "Label 2", value: "100"},
+        {title: "Label 3", value: "100"},
+        {title: "Label 4", value: "100"}]
 });
 
 const DashboardExample = () => {

@@ -1,6 +1,6 @@
 {
   "name": "react-ui-gauge-component",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "It's a React UI component for creating guages",
   "main": "build/SimpleGauge.js",
   "scripts": {
