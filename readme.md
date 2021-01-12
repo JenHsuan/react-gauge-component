@@ -64,6 +64,8 @@ export default DashboardExample;
 
 ```
 
+* [Example for using react-ui-gauge-component with Redux](https://github.com/JenHsuan/example-react-ui-gauge-component/blob/master/components/DashboardExample.js)
+
 ## Props
 ### withGauge
 * WrappedComponent -  Put a react component as a widget to compose a new gauge. The default widget is the heartbeat icon.
@@ -97,7 +99,7 @@ MIT Licensed. Copyright (c) Jen-Hsuan Hsieh 2021.
 * [Medium](https://medium.com/a-layman)
 
 ## Links
-* [Change log]()
+* [Change log](https://github.com/JenHsuan/react-gauge-component/blob/master/changelog.md)
 
 ## Refernces
 * [[Guide] 發佈 npm 套件 - 從手動到自動（0）：專案與套件建置篇](https://pjchender.github.io/2020/02/02/guide-%E7%99%BC%E4%BD%88-npm-%E5%A5%97%E4%BB%B6-%E5%BE%9E%E6%89%8B%E5%8B%95%E5%88%B0%E8%87%AA%E5%8B%95%EF%BC%880%EF%BC%89%EF%BC%9A%E5%B0%88%E6%A1%88%E8%88%87%E5%A5%97%E4%BB%B6%E5%BB%BA%E7%BD%AE%E7%AF%87/)
