@@ -1,6 +1,8 @@
 # Gauge Component for React
 A library that provides basic gauge styles and widgets to create gauges efficiently for React projects.
 
+![screen shot](https://raw.githubusercontent.com/JenHsuan/react-gauge-component/master/demo/screen-shot.jpg)
+
 ## Installation and usage
 The easiest way to use react-ui-gauge-component is to install it from npm.
 
